@@ -1,0 +1,75 @@
+import React from 'react'
+import { StyleSheet, Text, View,Image } from 'react-native'
+
+export default function FindOnBoardScreen() {
+  return (
+   <View style={styles.mainView}>
+   <View style={styles.imgView}>
+    <Image style={styles.imgStyle} source={require('../Img/onBoardingFindScreen/img1.png')}/>
+   </View>
+   <View style={styles.TextBoldText}>     
+    <Text style={styles.BoldTxt}>Find Blood Donors</Text>
+   </View>
+   <View style={styles.TextView}>
+    <Text style={{ width:'85%',fontSize:20,textAlign:'center',color:'#7E7E7E'}}>
+        Lorem ipsum dolor sit amet,
+         consectetur adipiscing elit.
+          Arcu tristique tristique quam in.
+          </Text>
+   </View>
+   <View style={styles.IconView}>
+    <Image source={require('../Img/onBoardingFindScreen/img2.png')}/>
+   </View>
+   <View style={styles.TextBtnView}>
+    <Text>Skip</Text>
+    <Text>Next</Text>
+   </View>
+   
+   </View>
+  )
+}
+
+const styles=StyleSheet.create({
+mainView:{
+    flex:1
+},
+imgStyle:{
+    width:'90%',
+    height:230
+},
+imgView:{
+    flex:.7,
+    
+    alignItems:'center',
+    justifyContent:'flex-end',
+},
+TextBoldText:{
+flex:.2,
+justifyContent:'flex-end',
+alignItems:'center'
+},
+TextView:{
+    flex:.2,
+   alignItems:'center',
+   justifyContent:'center'
+    
+},
+BoldTxt:{
+    fontSize:24,
+    fontWeight:'500'
+},
+IconView:{
+    flex:.2,
+    justifyContent:'center',
+    alignItems:'center'
+},
+TextBtnView:{
+    flex:.1,
+    alignItems:'center',
+    justifyContent:'space-between',
+    flexDirection:'row'
+}
+
+
+
+})

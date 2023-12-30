@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "BloodDonation",
+    "description": "your app desc",
+
+    "slug": "Test",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./Img/img1.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./Img/img1.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff",
+      "permissions": ["CAMERA"],
+      "android": {
+        "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"],
+        "adaptiveIcon": {
+          "foregroundImage": "./Img/img1.png",
+          "backgroundColor": "#ffffff"
+        }
+      },
+      "web": {
+        "favicon": "./assets/favicon.png"
+      }
+      
+        
+    },
+    "plugins": [
+      ["expo-screen-orientation", { "initialOrientation": "DEFAULT" }]
+    ],
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.qudratullahkhan.Test"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    
+    "owner": "qudratullahkhan"
+  }
+}

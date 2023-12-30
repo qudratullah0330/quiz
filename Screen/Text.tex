@@ -1,0 +1,112 @@
+
+
+
+
+import React, { useState } from 'react'
+import { Text, View,StyleSheet, Image, TextInput,TouchableOpacity, ScrollView } from 'react-native'
+import { Entypo } from '@expo/vector-icons';
+export default function LoginScreen({navigation}) {
+  const [showPassword,setShowPassword]=useState(false)
+
+  const HandlerPassword=()=>{
+    setShowPassword(!showPassword)
+  }
+  return (<ScrollView style={{flex:1}}>
+    <View style={{flex:1,backgroundColor:'red'}}>
+      
+   <View style={{flex:1,backgroundColor:'white',marginTop:'30%'}}>
+      <View style={styles.imgView}>
+        <Image source={require('../Img/AuthImg/img1.png')} style={{width:122,height:160}}/>
+      </View>
+      <View style={styles.imgTextView}>
+      <Image source={require('../Img/AuthImg/img2.png')} style={{width:164,height:50}}/>
+      </View>
+
+      <View style={styles.TextinputStyle}>
+         <View style={styles.inputContainerStyle}>
+            <Image style={styles.imgStyle} source={require('../Img/inputIcon/Vector.png')}/>
+            <View style={styles.verticleLine}></View>
+            <TextInput style={{width:'60%'}} placeholder='Enter Email'/>
+         </View>
+
+         <View style={styles.inputContainerStyle}>
+            <Image style={styles.imgStyleLock} source={require('../Img/inputIcon/Vector1.png')}/>
+            <View style={styles.verticleLine}></View>
+            <TextInput style={{width:'60%'}} returnKeyType='emergency-call' secureTextEntry={!showPassword} placeholder='Enter Password'/>
+            <Entypo onPress={HandlerPassword} name={showPassword?"eye":'eye-with-line'} size={24} color="#B50102" style={{marginHorizontal:15}}/>
+         </View>
+       
+       
+      </View>
+      <View style={{flex:.1,justifyContent:'flex-start',alignItems:'center'}}>
+      <TouchableOpacity  onPress={()=>navigation.navigate('HomeScreen')}
+           style={{width:'90%',borderWidth:2,borderColor:'#B50102',borderRadius:30,backgroundColor:'#B50102'}}>
+          <Text style={{padding:3,textAlign:'center',fontWeight:'500',fontSize:22,color:'white'}}>LOG IN</Text>
+          </TouchableOpacity>
+          </View>
+          <View style={{flex:.05,alignItems:'center',justifyContent:'flex-start',marginTop:0}}>
+       <Text style={{color:'#B50102'}}onPress={()=>navigation.navigate('ForgetPassword')}>Forgot Password?</Text>
+          </View>
+          <View style={{flex:.1,flexDirection:'row',alignItems:'flex-end',justifyContent:'center'}}>
+             <Text style={{color:'#7E7E7E'}}>Don’t have an account?</Text>
+             <Text style={{color:'#B50102',marginLeft:10}} onPress={()=>navigation.navigate('Register')}>Register Now.</Text>
+          </View>
+      </View>
+  
+      </View>
+      </ScrollView>
+  )
+}
+
+const styles=StyleSheet.create({
+imgView:{
+  flex:.30,
+  justifyContent:'center',
+  alignItems:'center'
+},
+imgTextView:{
+    flex:.1,
+justifyContent:'flex-start',
+alignItems:'center',
+marginBottom:30
+},
+verticleLine: {
+    height: '100%',
+    width: 1,
+    backgroundColor: '#E2E2E2',
+    marginRight:20,
+  },
+  TextinputStyle:{
+    flex:.4,
+    width:'100%',
+    alignItems:'center',
+    justifyContent:'center',
+  },
+  inputContainerStyle:{
+    borderWidth:1,
+    width:'90%',
+    height:50,
+    borderRadius:5,
+    borderColor: '#F8F8F8',
+    backgroundColor: '#F8F8F8',
+    marginBottom: 25,
+    flexDirection:'row'
+    ,alignItems:'center',
+  },
+  imgStyle:{
+    width: 21,
+    height: 15,
+    margin: 17,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  imgStyleLock:{
+    width: 21,
+    height: 24,
+    margin: 17,
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+  },
+  
+})

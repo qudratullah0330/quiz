@@ -1,0 +1,61 @@
+import React from 'react'
+import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from '@react-navigation/stack'
+import SplashScreen from './Screen/SplashScreen' 
+import FindOnBoardScreen from './Screen/FindOnBoardScreen'
+import Login from './Screen/Login'
+import LoginScreen from './Screen/LoginScreen'
+import Register from './Screen/Register'
+import ForgetPassword from './Screen/ForgetPassword'
+import HomeScreen from './Screen/HomeScreen'
+import TabNavigation from './Components/TabNavigation'
+import DonationDetailes from './Screen/DonationDetailes'
+import DonationScreen from './Screen/DonationScreen'
+import ResetPassword from './Screen/ResetPassword'
+import FindScreen from './Screen/FindScreen'
+import CreateRequste from './Screen/CreateRequste'
+import RecviewNotifcation from './Screen/RecviewNotifcation'
+import Compaign from './Screen/Compaign'
+import NewCompaign from './Screen/NewCompaign'
+import DonationHistory from './Screen/DonationHistory'
+import DrwerNavigation from './Components/DrwerNavigation'
+import ProfileScreen from './Screen/ProfileScreen'
+import Contact from './Screen/Contact'
+import FaqsData from './Screen/FaqsData'
+import Anuncement from './Screen/Anuncement'
+import NewAnounce from './Screen/NewAnounce'
+const Stack=createStackNavigator()
+
+export default function App() {
+  
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='SplashScreen' component={SplashScreen} options={{headerShown:false}}/>
+        <Stack.Screen name='FindOnBoardScreen' component={FindOnBoardScreen} options={{headerShown:false}}/>
+        <Stack.Screen name='HomeScreen' component={DrwerNavigation} options={{headerShown:false}}/>
+        <Stack.Screen name='Login' component={Login} options={{headerShown:false}}/>
+        <Stack.Screen name='LoginScreen' component={LoginScreen} options={{headerShown:false}}/>
+        <Stack.Screen name='Register' component={Register} options={{headerShown:false}}/>
+        <Stack.Screen name='ForgetPassword' component={ForgetPassword} options={{headerShown:false}}/>      
+        <Stack.Screen name='DonationDetailes' component={DonationDetailes} options={{headerShown:false}}/>
+        <Stack.Screen name='DonationScreen' component={DonationScreen} options={{headerShown:false}}/>
+        <Stack.Screen name='Reset Passwaord' component={ResetPassword} options={{headerShown:false}}/>
+        <Stack.Screen name='HomeScreenTwo' component={HomeScreen} options={{headerShown:false}}/>
+        <Stack.Screen name='FindScreenTwo' component={FindScreen} options={{headerShown:false}}/>
+        <Stack.Screen name='CreateRequste' component={CreateRequste} options={{headerShown:false}}/>
+        <Stack.Screen name='ReceviewNotifcation' component={RecviewNotifcation} options={{headerShown:false}}/>
+        <Stack.Screen name='Compaign' component={Compaign} options={{headerShown:false}}/>
+        <Stack.Screen name='NewCompaign'component={NewCompaign} options={{headerShown:false}}/>
+        <Stack.Screen name='DonationHistory'component={DonationHistory} options={{headerShown:false}}/>
+        <Stack.Screen name='ProfileScreenTwo'component={ProfileScreen} options={{headerShown:false}}/>
+        <Stack.Screen name='Contact'component={Contact} options={{headerShown:false}}/>
+        <Stack.Screen name='FaqsData'component={FaqsData} options={{headerShown:false}}/>
+        <Stack.Screen name='Anuncement'component={Anuncement} options={{headerShown:false}}/>
+        <Stack.Screen name='NewAnounce'component={NewAnounce} options={{headerShown:false}}/>
+      
+      </Stack.Navigator>
+      
+    </NavigationContainer>
+  )
+}
